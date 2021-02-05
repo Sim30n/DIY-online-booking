@@ -1,0 +1,68 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="container">
+  <h1>{{ test.monday }}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Monday</th>
+        <th scope="col">Tuesday</th>
+        <th scope="col">Wednesday</th>
+        <th scope="col">Thursday</th>
+        <th scope="col">Friday</th>
+        <th scope="col">Saturday</th>
+        <th scope="col">Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for time in time_list %}
+        <tr>
+          {% if time.1 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.1 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+          {% if time.2 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.2 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+          {% if time.3 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.3 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+          {% if time.4 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.4 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+          {% if time.5 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.5 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+          {% if time.6 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.6 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+          {% if time.0 %}
+            <td><a class="btn btn-outline-success" href="#">{{ time.0 }}</a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
