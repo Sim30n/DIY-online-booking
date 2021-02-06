@@ -27,6 +27,15 @@ class TimeTableView(TemplateView):
 
         serv_duration = datetime.timedelta(minutes=30)
 
+        context["days"] = []
+        days = 0
+        while loc_monday <= loc_sunday:
+            context["days"].append(loc_monday.strftime("%d.%m"))
+            loc_monday += datetime.timedelta(days=1)
+            days += 1
+        context["days"].pop()
+
+
         resv_num = 0
         for i in query_set:
             start = i.start

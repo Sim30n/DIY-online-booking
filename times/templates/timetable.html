@@ -2,16 +2,12 @@
 {% block content %}
 <div class="container">
   <h1>{{ test.monday }}</h1>
-  <table class="table">
+  <table class="table text-center">
     <thead>
       <tr>
-        <th scope="col">Monday</th>
-        <th scope="col">Tuesday</th>
-        <th scope="col">Wednesday</th>
-        <th scope="col">Thursday</th>
-        <th scope="col">Friday</th>
-        <th scope="col">Saturday</th>
-        <th scope="col">Sunday</th>
+        {% for day in days %}
+        <th scope="col">{{ day }}</th>
+        {% endfor %}
       </tr>
     </thead>
     <tbody>
