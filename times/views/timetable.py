@@ -6,14 +6,14 @@ from pytz import timezone
 # Create your views here.
 
 class TimeTableView(TemplateView):
-    template_name = "timetable.html"
+    template_name = "times/timetable.html"
 
     def get_context_data(self, week, *args, **kwargs):
         context = super().get_context_data(**kwargs)
-        d = week #"2013-W26"
+        #d = week #"2013-W26"
         helsinki = timezone("Europe/Helsinki")
-        monday = datetime.datetime.strptime(d + '-1', "%Y-W%W-%w")
-        sunday = datetime.datetime.strptime(d + '-0', "%Y-W%W-%w")
+        monday = datetime.datetime.strptime(week + '-1', "%Y-W%W-%w")
+        sunday = datetime.datetime.strptime(week + '-0', "%Y-W%W-%w")
         sunday = sunday + datetime.timedelta(hours=24)
         loc_monday = helsinki.localize(monday)
         loc_sunday = helsinki.localize(sunday)
