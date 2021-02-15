@@ -14,43 +14,43 @@
       {% for time in time_list %}
         <tr>
           {% if time.1 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.1 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.1}}/{{days.0}}">{{ time.1 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}
 
           {% if time.2 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.2 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.2}}/{{days.1}}">{{ time.2 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}
 
           {% if time.3 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.3 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.3}}/{{days.2}}">{{ time.3 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}
 
           {% if time.4 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.4 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.4}}/{{days.3}}">{{ time.4 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}
 
           {% if time.5 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.5 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.5}}/{{days.4}}">{{ time.5 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}
 
           {% if time.6 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.6 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.6}}/{{days.5}}">{{ time.6 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}
 
           {% if time.0 %}
-            <td><a class="btn btn-outline-success" href="#">{{ time.0 }}</a></td>
+            <td><a class="btn btn-outline-success" href="/reserve/{{time.0}}/{{days.6}}">{{ time.0 }}</a></td>
           {% else %}
             <td></td>
           {% endif %}

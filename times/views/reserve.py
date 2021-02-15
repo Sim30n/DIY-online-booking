@@ -13,7 +13,8 @@ class ReserveView(CreateView):
     def get_initial(self):
         initial = super(ReserveView, self).get_initial()
         initial = initial.copy()
-        initial["description"] = "MORO MORO"
+        print(self.kwargs)
+        initial["description"] = "{}, {}".format(self.kwargs["week"], self.kwargs["time"])
         return initial
 
 
