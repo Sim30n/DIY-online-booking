@@ -8,7 +8,7 @@ from pytz import timezone
 class TimeTableView(TemplateView):
     template_name = "times/timetable.html"
 
-    def get_context_data(self, week, *args, **kwargs):
+    def get_context_data(self, week, duration, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         #d = week #"2013-W26"
         helsinki = timezone("Europe/Helsinki")
@@ -25,12 +25,12 @@ class TimeTableView(TemplateView):
                             .order_by('reserved_date')
         times = {str(i):[] for i in range(7)}
 
-        serv_duration = datetime.timedelta(minutes=30)
+        serv_duration = datetime.timedelta(minutes=duration)
 
         context["days"] = []
         days = 0
         while loc_monday <= loc_sunday:
-            context["days"].append(loc_monday.strftime("%d.%m"))
+            context["days"].append(loc_monday.strftime("%d.%m.%y"))
             loc_monday += datetime.timedelta(days=1)
             days += 1
         context["days"].pop()

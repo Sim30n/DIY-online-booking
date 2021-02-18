@@ -23,6 +23,7 @@ class Reservation(models.Model):
                                 related_name="services",
                                 on_delete=models.CASCADE)
     reserved_date = models.DateTimeField()
+    duration = models.IntegerField()
     description = models.TextField()
     customer_name = models.CharField(max_length=200)
     customer_email = models.EmailField()
