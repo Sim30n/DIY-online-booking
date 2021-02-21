@@ -4,12 +4,23 @@
   <div class="container">
     {% for service in services %}
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="{{ service.service_type }}">
       <label class="form-check-label" for="flexRadioDefault1">
-        {{ service.service_type }}
+        {{ service.service_type }} {{ service.duration }}
       </label>
     </div>
     {% endfor %}
+
+    <script type="text/javascript">
+      let serv = document.getElementById("flexRadioDefault1");
+      let a = document.createElement('a');
+      let linkText = document.createTextNode("my title text");
+      a.appendChild(linkText);
+      a.title = "Katso vapaat ajat tästä";
+      a.href = "../timetable/"+serv.value;
+      document.body.appendChild(a);
+    </script>
+
   </div>
 
 {% endblock %}
